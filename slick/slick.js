@@ -55,6 +55,7 @@
                     return $('<button type="button" data-role="none" role="button" tabindex="0" />').text(i + 1);
                 },
                 dots: false,
+                dotsClickable: false,
                 dotsClass: 'slick-dots',
                 draggable: true,
                 easing: 'linear',
@@ -1336,7 +1337,7 @@
 
         var _ = this;
 
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+        if (_.options.dots === true && _.slideCount > _.options.slidesToShow && _.options.dotsClickable === true) {
             $('li', _.$dots).on('click.slick', {
                 message: 'index'
             }, _.changeSlide);
